@@ -1,0 +1,129 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="PlayDocumentation.MainWindow"
+    Title="Play Documentation Generator" Height="800" Width="1000">
+    <Window.Resources>
+        <Style TargetType="TextBox" x:Key="TextBoxBase">
+            <Setter Property="Margin" Value="2" />
+        </Style>
+        <Style TargetType="TextBox" BasedOn="{StaticResource TextBoxBase}" />
+        <Style TargetType="Button">
+            <Setter Property="Padding" Value="5,2" />
+            <Setter Property="Margin" Value="2" />
+            <Setter Property="Height" Value="23" />
+            <Setter Property="MinWidth" Value="75" />
+        </Style>
+        <Style TargetType="TextBox" x:Key="MultiLineText" BasedOn="{StaticResource TextBoxBase}">
+            <Setter Property="Height" Value="60" />
+            <Setter Property="HorizontalScrollBarVisibility" Value="Disabled" />
+            <Setter Property="AcceptsReturn" Value="True" />
+            <Setter Property="VerticalScrollBarVisibility" Value="Visible" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Margin" Value="2" />
+            <Setter Property="MinWidth" Value="75" />
+            <Setter Property="IsEditable" Value="True" />
+            <Setter Property="ItemsSource" Value="{Binding Labels}" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="400" />
+        </Grid.ColumnDefinitions>
+        <ScrollViewer Grid.Column="0" HorizontalContentAlignment="Stretch" VerticalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Content="Titel"/>
+                <TextBox Grid.Row="0"  Grid.Column="1" x:Name="PlayTitle" />
+
+                <Label Grid.Row="1" Grid.Column="0" Content="Vorlage"/>
+                <TextBox Grid.Row="1"  Grid.Column="1" x:Name="Subtitle" />
+
+                <Label Grid.Row="2" Grid.Column="0" Content="Altersstufe"/>
+                <TextBox Grid.Row="2"  Grid.Column="1" x:Name="AgeGroup"/>
+
+                <Label Grid.Row="3" Grid.Column="0" Content="1. Absatz Beschreibung (Teaser)"/>
+                <TextBox Grid.Row="3"  Grid.Column="1" x:Name="Teaser" Style="{StaticResource MultiLineText}" />
+
+                <Label Grid.Row="4" Grid.Column="0" Content="Restliche Beschreibung"/>
+                <TextBox Grid.Row="4"  Grid.Column="1" x:Name="Description" Style="{StaticResource MultiLineText}" Height="175"/>
+
+                <Label Grid.Row="5" Grid.Column="0" Content="Von und mit"/>
+                <TextBox Grid.Row="5"  Grid.Column="1" x:Name="Players" Style="{StaticResource MultiLineText}" />
+
+                <ComboBox Grid.Row="6" Grid.Column="0" x:Name="OtherLabel1" />
+                <TextBox Grid.Row="6"  Grid.Column="1" x:Name="OtherText1" />
+
+                <ComboBox Grid.Row="7" Grid.Column="0" x:Name="OtherLabel2"/>
+                <TextBox Grid.Row="7"  Grid.Column="1" x:Name="OtherText2" />
+
+                <ComboBox Grid.Row="8" Grid.Column="0" x:Name="OtherLabel3" />
+                <TextBox Grid.Row="8"  Grid.Column="1" x:Name="OtherText3" />
+
+                <ComboBox Grid.Row="9" Grid.Column="0" x:Name="OtherLabel4" />
+                <TextBox Grid.Row="9"  Grid.Column="1" x:Name="OtherText4" />
+
+                <ComboBox Grid.Row="10" Grid.Column="0" x:Name="OtherLabel5" Text="Technik"/>
+                <TextBox Grid.Row="10"  Grid.Column="1" x:Name="OtherText5" />
+
+                <ComboBox Grid.Row="11" Grid.Column="0" x:Name="OtherLabel6" Text="Spielleitung"/>
+                <TextBox Grid.Row="11"  Grid.Column="1" x:Name="OtherText6" />
+
+                <ComboBox Grid.Row="12" Grid.Column="0" x:Name="OtherLabel7" Text="Mitarbeit"/>
+                <TextBox Grid.Row="12"  Grid.Column="1" x:Name="OtherText7" />
+
+                <ComboBox Grid.Row="13" Grid.Column="0" x:Name="OtherLabel8" />
+                <TextBox Grid.Row="13"  Grid.Column="1" x:Name="OtherText8" />
+
+                <ComboBox Grid.Row="14" Grid.Column="0" x:Name="OtherLabel9" />
+                <TextBox Grid.Row="14"  Grid.Column="1" x:Name="OtherText9" />
+
+                <Label Grid.Row="15" Grid.Column="0" Content="Dauer (in Minuten)"/>
+                <TextBox Grid.Row="15"  Grid.Column="1" x:Name="Duration" />
+
+                <Label Grid.Row="16" Grid.Column="0" Content="Aufführungen"/>
+                <TextBox Grid.Row="16"  Grid.Column="1" x:Name="Shows" Style="{StaticResource MultiLineText}" />
+
+            </Grid>
+        </ScrollViewer>
+        <GridSplitter Grid.Column="1" Width="4" ResizeBehavior="PreviousAndNext" />
+        <DockPanel Grid.Column="2" LastChildFill="True">
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                <Button Content="HTML erzeugen" Click="GenerateHtml" />
+                <Button Content="XML erzeugen" Click="GenerateXml" />
+                <Button Content="Zurücksetzen" Click="Reset" />
+            </StackPanel>
+            <TextBox x:Name="Output" Style="{StaticResource MultiLineText}" Height="Auto" />
+        </DockPanel>
+    </Grid>
+</Window>
